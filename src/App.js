@@ -1,4 +1,4 @@
-import React, { useEffect, useState, forwardRef } from 'react';
+import React, { useEffect, useState, forwardRef, useRef } from 'react';
 import Counter from "./components/Counter";
 import ClassCounter from "./components/Counter";
 import PostItem from "./components/PostItem";
@@ -15,8 +15,9 @@ const [posts, setPosts] = useState([
   {id: 3, title: "Javascript 3", body: "Description"},
 ])
 
-const [title, setTitle] = useState ('')
-const = bodyInputRef = useRef();
+const [title, setTitle] = useState ('');
+const bodyInputRef = useRef();
+
 const addNewPost = (e) => {
 e.preventDefault ()
 }
