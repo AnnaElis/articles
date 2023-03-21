@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Counter from "./components/Counter"
+import ClassCounter from "./components/Counter"
 import "./style.css";
 
 export default function App() {
@@ -6,7 +8,7 @@ export default function App() {
 
   return (
     <div className="App">
-    <Counter/>
+      <ClassCounter/>
   </div>
   );
 }
