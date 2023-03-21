@@ -4,6 +4,7 @@ import ClassCounter from "./components/Counter";
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";
 import MyButton from "./components/UI/button/MyButton";
+import MyButton from "./components/UI/input/MyInput";
 import "./style.css";
 import "./styles/app.css";
 
@@ -19,7 +20,7 @@ const [posts, setPosts] = useState([
       <form>
         <input type="text" placeholder="Название поста"/>
         <input type="text" placeholder="Описание поста"/>
-        <MyButton>Создать пост</MyButton>
+        <MyButton> Создать пост</MyButton>
       </form>
     <PostList posts={posts} title="Посты про JS"/>
     
