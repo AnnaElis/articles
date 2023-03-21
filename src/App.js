@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, forwardRef } from 'react';
 import Counter from "./components/Counter";
 import ClassCounter from "./components/Counter";
 import PostItem from "./components/PostItem";
@@ -15,12 +15,25 @@ const [posts, setPosts] = useState([
   {id: 3, title: "Javascript 3", body: "Description"},
 ])
 
+const [title, setTitle] = useState ('')
+const = bodyInputRef = useRef();
+const addNewPost = (e) => {
+e.preventDefault ()
+}
+
   return (
     <div className="App">
       <form>
-        <MyInput type="text" placeholder="Название поста"/>
-        <MyInput type="text" placeholder="Описание поста"/>
-        <MyButton> Создать пост</MyButton>
+        <MyInput 
+        value={title}
+        onChange = {e => setTitle(e.target.value)}
+        type="text" 
+        placeholder="Название поста"/>
+        <MyInput 
+        ref={bodyInputRef}
+        type="text" 
+        placeholder="Описание поста"/>
+        <MyButton onClick={addNewPost}> Создать пост</MyButton>
       </form>
     <PostList posts={posts} title="Посты про JS"/>
     

@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, forwardRef } from 'react';
 import classes from './MyInput.module.css';
 
-const MyInput = (props) => {
+const MyInput = forwardRef((props, ref) => {
   return (
-    <input className={classes.myInput} {...props}>
-    </input>
+    <input
+      ref={ref} className={classes.myInput} 
+      {...props}
+    />
   );
-};
+});
 
 export default MyInput;
