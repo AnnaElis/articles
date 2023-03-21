@@ -6,11 +6,15 @@ import "./style.css";
 import "./styles/app.css";
 
 export default function App() {
-  const [value, setValue] = useState ('Текст в инпуте')
-
+const [posts, setPosts] = useState([
+  {id: 1, title: "Javascript", body: "Description"},
+  {id: 2, title: "Javascript 2" , body: "Description"},
+  {id: 3, title: "Javascript 3", body: "Description"},])
   return (
     <div className="App">
-  <PostItem post={{id:1, title: "Javascript", body: "Description"}}/>
+  {posts.map(post =>
+    <PostItem post={post} key={post.id}/>
+  ) }
   </div>
   );
 }
