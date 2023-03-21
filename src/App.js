@@ -8,7 +8,15 @@ export default function App() {
 
   return (
     <div className="App">
-      <ClassCounter/>
+      <div className="post">
+        <div className="post__content">
+          <strong>1. Javascript</strong>
+          <div>
+            Javascript - язык программирования.
+          </div>
+          </div>
+          <button>Удалить</button>
+      </div>
   </div>
   );
 }
