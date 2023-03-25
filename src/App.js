@@ -3,6 +3,7 @@ import Counter from "./components/Counter";
 import ClassCounter from "./components/Counter";
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";
+import PostForm from "./components/PostForm";
 import MyButton from "./components/UI/button/MyButton";
 import MyInput from "./components/UI/input/MyInput";
 import "./style.css";
@@ -15,31 +16,29 @@ const [posts, setPosts] = useState([
   {id: 3, title: "Javascript 3", body: "Description"},
 ])
 
-const [title, setTitle] = useState ('');
-const [body, setBody] = useState ('');
-
-const addNewPost = (e) => {
-  const newPost {
-    
-  }
+const createPost = (newPost) => {
+  setPosts([...posts, newPost])
 }
 
+const removePost = (post) => {
+    setPosts(posts.filter(p => p.id !== post.id))
+}
   return (
     <div className="App">
-      <form>
-        <MyInput 
-          value={title}
-          onChange = {e => setTitle(e.target.value)}
-          type="text" 
-          placeholder="Название поста"/>
-        <MyInput
-          value={body}
-          onChange = {e => setBody(e.target.value)}
-          type="text" 
-          placeholder="Описание поста"/>
-        <MyButton onClick={addNewPost}> Создать пост</MyButton>
-      </form>
-    <PostList posts={posts} title="Посты про JS"/>
+    <PostForm create={createPost}/>
+    <hr style={{margin:'15px 0'}}/>
+    <div>
+      <select>
+        <option value="value1">По названию</option>
+        <option value="value1">По описанию</option>
+        </select>
+    </div>
+    {posts.length !==0
+    ? <PostList remove={removePost} posts={posts} title="Посты про JS"/>
+    : <h1 style={{textAlign:'center'}}>Посты не найдены</h1>
+
+    }
+    
     
   </div>
   );
