@@ -16,24 +16,27 @@ const [posts, setPosts] = useState([
 ])
 
 const [title, setTitle] = useState ('');
-const bodyInputRef = useRef();
+const [body, setBody] = useState ('');
 
 const addNewPost = (e) => {
-e.preventDefault ()
+  const newPost {
+    
+  }
 }
 
   return (
     <div className="App">
       <form>
         <MyInput 
-        value={title}
-        onChange = {e => setTitle(e.target.value)}
-        type="text" 
-        placeholder="Название поста"/>
-        <MyInput 
-        ref={bodyInputRef}
-        type="text" 
-        placeholder="Описание поста"/>
+          value={title}
+          onChange = {e => setTitle(e.target.value)}
+          type="text" 
+          placeholder="Название поста"/>
+        <MyInput
+          value={body}
+          onChange = {e => setBody(e.target.value)}
+          type="text" 
+          placeholder="Описание поста"/>
         <MyButton onClick={addNewPost}> Создать пост</MyButton>
       </form>
     <PostList posts={posts} title="Посты про JS"/>
